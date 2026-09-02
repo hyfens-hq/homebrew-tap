@@ -25,7 +25,13 @@ class Hyfens < Formula
   end
 
   def install
-    root_dir = Dir["hyfens-*"].first
+    root_dir = if File.exist?("bin/hyfens")
+      "."
+    else
+      Dir["hyfens-*"].find { |entry| File.exist?("#{entry}/bin/hyfens") }
+    end
+    raise "Hyfens archive root was not found" if root_dir.nil?
+
     bin_dir = "#{root_dir}/bin"
     lib_dir = "#{root_dir}/lib"
     bin.install "#{bin_dir}/hyfens"
