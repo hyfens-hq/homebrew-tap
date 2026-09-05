@@ -3,6 +3,7 @@ class Hyfens < Formula
   homepage "https://hyfens.com"
   version "0.1.3"
   license "Apache-2.0"
+  revision 1
 
   on_macos do
     if Hardware::CPU.arm?
@@ -34,12 +35,19 @@ class Hyfens < Formula
 
     bin_dir = "#{root_dir}/bin"
     lib_dir = "#{root_dir}/lib"
+    runtime_dir = "#{root_dir}/runtime"
+    raise "Hyfens runtime bundle was not found" unless Dir.exist?(runtime_dir)
+
     bin.install "#{bin_dir}/hyfens"
     bin.install "#{bin_dir}/tool" => "tool"
     lib.install Dir["#{lib_dir}/*"] if Dir.exist?(lib_dir)
+    prefix.install runtime_dir
   end
 
   test do
     system bin / "hyfens", "--version"
+    assert_path_exists prefix/"runtime/hyfens_flutter_integration/lib/flutter_integration.dart"
+    assert_path_exists prefix/"runtime/path_provider/lib/path_provider.dart"
+    assert_path_exists prefix/"runtime/objective_c/hook/build.dart"
   end
 end
