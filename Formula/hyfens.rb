@@ -1,27 +1,26 @@
 class Hyfens < Formula
   desc "Open-source Flutter live-update infrastructure CLI"
   homepage "https://hyfens.com"
-  version "0.1.3"
+  version "0.1.5"
   license "Apache-2.0"
-  revision 1
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.3/hyfens-0.1.3-macos-arm64.tar.gz"
-      sha256 "389de2650109ed87aa9f688f562a79df2f34cc5fd907eecbc551603639439fff"
+      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.5/hyfens-0.1.5-macos-arm64.tar.gz"
+      sha256 "c08fa71c1a405cab5908120c7a774ec00418fde2dec2f62843b2973677fae90a"
     else
-      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.3/hyfens-0.1.3-macos-x64.tar.gz"
-      sha256 "f6b508474e24812e5cec821b5505001c463b26fc7d1f3ddcc0998a69c7dcecaa"
+      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.5/hyfens-0.1.5-macos-x64.tar.gz"
+      sha256 "a120360dac09a724422627eaaa718cec193216866680658efc6e31a1e89cdba1"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.3/hyfens-0.1.3-linux-arm64.tar.gz"
-      sha256 "844680d7ecd56125c0517a14f341e44c8e429907665d0be24d934ee14c0feda8"
+      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.5/hyfens-0.1.5-linux-arm64.tar.gz"
+      sha256 "d27462e447709d646740257ebbe01bc31fc4ecbf88b67238329dd06836f5544a"
     else
-      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.3/hyfens-0.1.3-linux-x64.tar.gz"
-      sha256 "2f29e481a91d2094a9a20c66c14e08c01333b03cfc817b2e8d098ae7a5d63690"
+      url "https://github.com/hyfens-hq/hyfens/releases/download/v0.1.5/hyfens-0.1.5-linux-x64.tar.gz"
+      sha256 "35257eb2fc96ad4c226ef29c306a5b7bf3f1c5e8a6cf860ab76584be7a45517f"
     end
   end
 
